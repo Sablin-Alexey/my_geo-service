@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class IpTest {
 
-    Map<String, String> sut = new HashMap<String, String>();
+  private   Map<String, String> sut = new HashMap<String, String>();
 
     @Test
     void test_ip_USA() {

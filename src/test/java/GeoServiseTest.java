@@ -12,7 +12,7 @@ public class GeoServiseTest {
   private   Location locationRsult;
 
     @Test
-    void geo_test_USA() {
+    void geoTestUSA() {
         geoService = new GeoServiceImpl();
         locationExpected = new Location("New York", Country.USA, null, 0);
         locationRsult = geoService.byIp("96.42.183.179");
@@ -26,7 +26,7 @@ public class GeoServiseTest {
     }
 
     @Test
-    void geo_test_Russia() {
+    void geoTestRussia() {
         geoService = new GeoServiceImpl();
         locationExpected = new Location("Moscow", Country.RUSSIA, "Lenina", 15);
         locationRsult = geoService.byIp("172.44.183.149");

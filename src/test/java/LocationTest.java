@@ -10,7 +10,7 @@ public class LocationTest {
   private   LocalizationServiceImpl localizationService;
 
     @Test
-    void location_test_USA() {
+    void locationTestUSA() {
 
         localizationService = new LocalizationServiceImpl();
 
@@ -22,7 +22,7 @@ public class LocationTest {
     }
 
     @Test
-    void location_test_Russia() {
+    void locationTestRussia() {
 
         localizationService = new LocalizationServiceImpl();
 

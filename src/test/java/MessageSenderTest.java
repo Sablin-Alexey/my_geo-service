@@ -13,13 +13,13 @@ import ru.netology.sender.MessageSenderImpl;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IpTest {
+public class MessageSenderTest {
 
-  private   Map<String, String> sut = new HashMap<String, String>();
+  private   Map<String, String> header = new HashMap<String, String>();
 
     @Test
-    void test_ip_USA() {
-        sut.put(MessageSenderImpl.IP_ADDRESS_HEADER, "96.44.183.149");
+    void testIpUSA() {
+        header.put(MessageSenderImpl.IP_ADDRESS_HEADER, "96.44.183.149");
 
 
         GeoService geoService = Mockito.mock(GeoService.class);
@@ -37,15 +37,15 @@ public class IpTest {
         MessageSenderImpl messageSenderImpl = new MessageSenderImpl(geoService, localizationService);
 
 
-        String result = messageSenderImpl.send(sut);
+        String result = messageSenderImpl.send(header);
         String expected = "Welcome";
         Assertions.assertEquals(result, expected);
 
 
     }
     @Test
-    void test_ip_RU() {
-        sut.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.44.183.149");
+    void testIpRU() {
+        header.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.44.183.149");
 
 
         GeoService geoService = Mockito.mock(GeoService.class);
@@ -63,7 +63,7 @@ public class IpTest {
         MessageSenderImpl messageSenderImpl = new MessageSenderImpl(geoService, localizationService);
 
 
-        String result = messageSenderImpl.send(sut);
+        String result = messageSenderImpl.send(header);
         String expected = "Добро пожаловать";
         Assertions.assertEquals(result, expected);
 
